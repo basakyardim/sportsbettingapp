@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "377160769075",
+    "project_id": "sportsbettingapp-41959",
+    "storage_bucket": "sportsbettingapp-41959.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377160769075:android:7df6bee5ce89b29a134d46",
+        "android_client_info": {
+          "package_name": "com.basakyardim.sportsbettingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377160769075-01hid0hktvagkfjrnhbesib9or0rbp9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUi0_ABbGGQgL5FEAVLb-XOqqOGgUaso0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377160769075-01hid0hktvagkfjrnhbesib9or0rbp9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
