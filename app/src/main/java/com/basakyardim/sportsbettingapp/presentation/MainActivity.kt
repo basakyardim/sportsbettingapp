@@ -3,41 +3,38 @@ package com.basakyardim.sportsbettingapp.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.basakyardim.sportsbettingapp.presentation.ui.theme.SportsBettingAppTheme
+import com.basakyardim.sportsbettingapp.util.BottomBar
+import com.ramcosta.composedestinations.DestinationsNavHost
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
+@ExperimentalAnimationApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             SportsBettingAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
+                val navController = rememberNavController()
+                Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
+                    bottomBar = {
+                        BottomBar(navController = navController)
+                    }) {
+                    DestinationsNavHost(
+                        navGraph = NavGraphs.root,
+                        navController = navController
+                    )
+
                 }
+
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    SportsBettingAppTheme {
-        Greeting("Android")
-    }
-}
